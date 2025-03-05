@@ -1,0 +1,92 @@
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Exclude static assets (images, JS, CSS) from redirects
+    RewriteCond %{REQUEST_URI} !\.(jpg|jpeg|png|gif|css|js|ico|svg|webp)$ [NC]
+    
+    # Check if the request is for 'index.php' directly
+    RewriteCond %{THE_REQUEST} \s/index\.php[\s?/] [NC]
+    RewriteCond %{HTTP_COOKIE} !PHPSESSID [NC]
+    RewriteRule ^index\.php$ /login.php [R=302,L]
+
+    # Block requests containing SQL injection patterns in the query string
+    RewriteCond %{REQUEST_METHOD} GET
+    RewriteCond %{QUERY_STRING} (union|select|insert|update|delete|drop|;|--|#|') [NC]
+    RewriteRule ^ - [F,L]
+
+    # Optional: Block requests that have SQL injection patterns in the URL
+    RewriteCond %{REQUEST_URI} (union|select|insert|update|delete|drop|;|--|#|') [NC]
+    RewriteRule ^ - [F,L]
+</IfModule>
+
+# Set X-Content-Type-Options Header
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Block Access to Important Files
+<FilesMatch "^(\.env|\.htaccess|config\.php|\.bak|\.old|\.save|log|txt)$">
+    Require all denied
+</FilesMatch>
+
+# Block Access to All Hidden Files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Restrict Access to Specific Files
+<Files "video.php">
+    Require all denied
+</Files>
+
+<Files "casino.php">
+    Require all denied
+</Files>
+
+# Enable Gzip Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# Leverage Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+</IfModule>
+
+# Enable Caching for Static Files
+<IfModule mod_headers.c>
+    <FilesMatch "\.(jpg|jpeg|png|gif|swf|js|css|pdf)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </FilesMatch>
+</IfModule>
+
+# Block Hotlinking
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?ssc-smis.ph [NC]
+RewriteRule \.(gif)$ - [F,NC]
+
+# Deny Directory Listing
+Options -Indexes
+
+# Rewrite URLs to hide the 'module' directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ module/$1/ [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/(.*)$ module/$1/$2 [L,QSA]
+
+ErrorDocument 404 /asset/error_pages/404.html
