@@ -1,9 +1,10 @@
 <?php
+  $cashierHistory = new Cashier_History();
   $transactions = new Transactions();
-  $nextNextCustomer = $transactions->get_nextNextQueueNumber("cashier1");
-  $nextCustomer = $transactions->get_nextQueueNumber("cashier1");
-  $currentCustomer = $transactions->get_currentQueueNumber("cashier1");
-  $prevCustomer = $transactions->get_currentLastCompletedQueueNumber("cashier1");
+  $nextNextCustomer = $transactions->get_nextNextQueueNumber("cashier3");
+  $nextCustomer = $transactions->get_nextQueueNumber("cashier3");
+  $currentCustomer = $transactions->get_currentQueueNumber("cashier3");
+  $prevCustomer = $cashierHistory->get_currentLastCompletedQueueNumber("cashier3");
 
   if (empty($currentCustomer->queue_number)) {
       $buttonStatus = 'disabled';  // If there is no next customer, disable the button
@@ -13,7 +14,7 @@
 
 ?>
 <div class="pagetitle">
-  <h1>Cashier 1</h1>
+  <h1>Cashier 3</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item active">All Information</li>
@@ -36,6 +37,12 @@
         <form hidden id="customerOrderForm" method="POST" action="<?php echo WEB_ROOT; ?>module/dashboard_controller.php">
           <input type="hidden" name="route" value="completeCustomerTransaction">
           <input type="number" name="currentCustomerTransId" value="<?= $currentCustomer->transaction_id?>">
+          <button type="submit" hidden class="btn btn-success">Submit</button>
+        </form>
+
+        <form hidden id="cancelCustomerOrderForm" method="POST" action="<?php echo WEB_ROOT; ?>module/dashboard_controller.php">
+          <input type="hidden" name="route" value="cancelCustomerTransaction">
+          <input type="number" name="cancelCurrentCustomerTransId" value="<?= $currentCustomer->transaction_id?>">
           <button type="submit" hidden class="btn btn-success">Submit</button>
         </form>
 
@@ -90,7 +97,7 @@
       <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-4 col-md-6 col-12 mb-2">
-          <button type="button" class="btn btn-lg btn-danger w-100 custom_btn_card">
+          <button <?=$buttonStatus?> id="cancelCustomerBtn" type="button" class="btn btn-lg btn-danger w-100 custom_btn_card">
               <i class="fas fa-times"></i> CANCEL
           </button>
         </div>
@@ -115,7 +122,7 @@
           <div class="activity overflow-auto" style="height: 25rem;">
             <?php
               $transactions = new Transactions(); // Assuming your class name is Transactions
-              $rows = $transactions->list_of_cashierKioskTransactions("cashier1");
+              $rows = $transactions->list_of_cashierKioskTransactions("cashier3");
             ?>
             <?php foreach ($rows as $res): ?>
                 <div class="activity-item d-flex">
@@ -150,17 +157,29 @@
     }
 
    document.getElementById('nextCustomerBtn').addEventListener('click', function () {
-      // Optional: Call speakText() if you want to handle speech before form submission
-      // speakText();
 
       // Now submit the form
       submitFormData();
   });
 
+   document.getElementById('cancelCustomerBtn').addEventListener('click', function () {
+
+      // Now submit the form
+      cancelFormData();
+  });
+
+   function cancelFormData() {
+      let form = document.getElementById('cancelCustomerOrderForm');
+      form.submit();  // This will submit the form data normally, without AJAX
+  }
+
+
   function submitFormData() {
       let form = document.getElementById('customerOrderForm');
       form.submit();  // This will submit the form data normally, without AJAX
   }
+
+  
 
 </script>
 

@@ -40,6 +40,12 @@
           <button type="submit" hidden class="btn btn-success">Submit</button>
         </form>
 
+        <form hidden id="cancelCustomerOrderForm" method="POST" action="<?php echo WEB_ROOT; ?>module/dashboard_controller.php">
+          <input type="hidden" name="route" value="cancelCustomerTransaction">
+          <input type="number" name="cancelCurrentCustomerTransId" value="<?= $currentCustomer->transaction_id?>">
+          <button type="submit" hidden class="btn btn-success">Submit</button>
+        </form>
+
         <div class="col-lg-4 col-md-6 col-12">
           <h5 class="text-center">
             <!-- <i class="bi bi-arrow-right"></i>  -->
@@ -91,7 +97,7 @@
       <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-4 col-md-6 col-12 mb-2">
-          <button type="button" class="btn btn-lg btn-danger w-100 custom_btn_card">
+          <button <?=$buttonStatus?> id="cancelCustomerBtn" type="button" class="btn btn-lg btn-danger w-100 custom_btn_card">
               <i class="fas fa-times"></i> CANCEL
           </button>
         </div>
@@ -151,12 +157,20 @@
     }
 
    document.getElementById('nextCustomerBtn').addEventListener('click', function () {
-      // Optional: Call speakText() if you want to handle speech before form submission
-      // speakText();
-
       // Now submit the form
       submitFormData();
   });
+
+  document.getElementById('cancelCustomerBtn').addEventListener('click', function () {
+
+      // Now submit the form
+      cancelFormData();
+  });
+
+   function cancelFormData() {
+      let form = document.getElementById('cancelCustomerOrderForm');
+      form.submit();  // This will submit the form data normally, without AJAX
+  }
 
   function submitFormData() {
       let form = document.getElementById('customerOrderForm');

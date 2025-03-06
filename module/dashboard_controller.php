@@ -10,6 +10,7 @@
         $router->addRoute('addTransaction', 'doAddTransaction');
         $router->addRoute('edit', 'doEdit');
         $router->addRoute('completeCustomerTransaction', 'doUpdateTransactionStatus');
+        $router->addRoute('cancelCustomerTransaction', 'doCancelTransactionStatus');
         $router->addRoute('del', 'doRemove');
         $router->handle();   
     }
@@ -91,6 +92,45 @@
 
         $transactionId = (int) htmlspecialchars($_POST['currentCustomerTransId']);
         $status = "Completed";
+
+        $transactions = new Transactions();
+        $cashier_history = new Cashier_History();
+        $mydb->beginTransaction(); // Begin transaction
+
+        try {
+            // Update user record
+            $transactions->transaction_id = $transactionId;
+            $transactions->status = $status;
+
+            if (!$transactions->update($transactionId)) {
+                throw new Exception("Failed to update transaction record.");
+            }
+
+            $cashier_history->transaction_id = $transactionId;
+            $cashier_history->status = $status;
+
+            if (!$cashier_history->create()) {
+                throw new Exception("Failed to create cashier history.");
+            }
+
+            $mydb->commitTransaction(); // Commit the transaction
+
+            DoRecordLogs("Transaction with ID $transactionId has been updated successfully!", "UPDATE");
+            message("Transaction has been updated successfully!", "success");
+
+        } catch (Exception $e) {
+            $mydb->rollbackTransaction(); // Rollback transaction on failure
+            message($e->getMessage(), "error");
+        }
+
+        redirect(WEB_ROOT);
+    }
+
+    function doCancelTransactionStatus() {
+        global $mydb;
+
+        $transactionId = (int) htmlspecialchars($_POST['cancelCurrentCustomerTransId']);
+        $status = "Cancelled";
 
         $transactions = new Transactions();
         $cashier_history = new Cashier_History();
