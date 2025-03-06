@@ -131,12 +131,13 @@
                           ?>
 
                           <?php foreach ($rows as $res): ?>
-                            <div class="col-lg-4 col-md-6 col-12 mb-2">
-                              <button type="button" class="btn cashier-btn btn-outline-primary w-100" data-cashier="<?=$res->counter_name ?>" cashier-id="<?=$res->counter_id ?>">
-                                  <i class="fas fa-user"></i> <?=$res->counter_name ?>
-                                  <br><small>Pending: <span id="pending_<?=$res->counter_name ?>">5</span> | Completed: <span id="completed_<?=$res->counter_name ?>">10</span></small>
-                              </button>
-                            </div>
+                              <div class="col-lg-4 col-md-6 col-12 mb-2">
+                                  <button type="button" class="btn cashier-btn btn-outline-primary w-100" data-cashier="<?=$res->counter_name ?>" cashier-id="<?=$res->counter_id ?>">
+                                      <i class="fas fa-user"></i> <?=$res->counter_name ?>
+                                      <br><small>Pending: <span id="pending_<?=$res->counter_name ?>"><?=$res->pending_count?></span> | 
+                                      Completed: <span id="completed_<?=$res->counter_name ?>"><?=$res->completed_count?></span></small>
+                                  </button>
+                              </div>
                           <?php endforeach; ?>
                           
                       </div>

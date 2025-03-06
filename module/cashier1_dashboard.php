@@ -1,9 +1,10 @@
 <?php
+  $cashierHistory = new Cashier_History();
   $transactions = new Transactions();
   $nextNextCustomer = $transactions->get_nextNextQueueNumber("cashier1");
   $nextCustomer = $transactions->get_nextQueueNumber("cashier1");
   $currentCustomer = $transactions->get_currentQueueNumber("cashier1");
-  $prevCustomer = $transactions->get_currentLastCompletedQueueNumber("cashier1");
+  $prevCustomer = $cashierHistory->get_currentLastCompletedQueueNumber("cashier1");
 
   if (empty($currentCustomer->queue_number)) {
       $buttonStatus = 'disabled';  // If there is no next customer, disable the button

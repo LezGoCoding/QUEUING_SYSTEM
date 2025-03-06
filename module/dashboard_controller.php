@@ -93,6 +93,7 @@
         $status = "Completed";
 
         $transactions = new Transactions();
+        $cashier_history = new Cashier_History();
         $mydb->beginTransaction(); // Begin transaction
 
         try {
@@ -101,7 +102,14 @@
             $transactions->status = $status;
 
             if (!$transactions->update($transactionId)) {
-                throw new Exception("Failed to update user record.");
+                throw new Exception("Failed to update transaction record.");
+            }
+
+            $cashier_history->transaction_id = $transactionId;
+            $cashier_history->status = $status;
+
+            if (!$cashier_history->create()) {
+                throw new Exception("Failed to create cashier history.");
             }
 
             $mydb->commitTransaction(); // Commit the transaction

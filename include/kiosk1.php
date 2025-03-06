@@ -29,7 +29,7 @@
 							JOIN counters c on c.counter_id = t.counter_id 
 							WHERE DATE(date_created) = CURDATE() AND t.status = 'Pending'
 							ORDER BY FIELD(T.priority, 'Yes', 'No') ASC,
-				            T.transaction_id ASC");
+				            DATE(date_created) ASC, t.transaction_id ASC");
 			$cur = $mydb->loadResultList();
 			return $cur;
 		}
@@ -41,60 +41,7 @@
 			return $cur;
 		}
 
-		function list_all_createdTodaysTransctions($emp_id) {
-		    global $mydb;
-		    $mydb->setQuery("
-		        SELECT 
-		            t.queue_number, 
-		            t.date_created, 
-		            GROUP_CONCAT(tt.transaction_name ORDER BY tt.transaction_name SEPARATOR ', ') AS transaction_types, 
-		            t.priority, 
-		            t.status
-		        FROM transactions t
-		        JOIN transaction_selections ts ON t.transaction_id = ts.transaction_id
-		        JOIN transaction_types tt ON ts.type_id = tt.type_id
-		        WHERE 
-		            DATE(t.date_created) = CURDATE()  -- Only today's transactions
-		            AND t.emp_id = '$emp_id'         -- Filter by employee who created it
-		        GROUP BY t.queue_number, t.date_created, t.priority, t.status
-		        ORDER BY 
-		            t.priority ASC,  -- Higher priority first
-		            t.date_created DESC, 
-		            t.transaction_id DESC;
-		    ");
-		    $cur = $mydb->loadResultList();
-		    return $cur;
-		}
-
-
-		function list_of_transactionsToday($emp_id) {
-		    global $mydb;
-		    
-		    $query = "
-		        SELECT 
-		            t.queue_number, 
-		            t.date_created,
-		            t.priority,
-		            t.status,
-		            GROUP_CONCAT(tt.transaction_name ORDER BY tt.transaction_name SEPARATOR ', ') AS transaction_types
-		        FROM transactions t
-		        JOIN transaction_selections ts ON t.transaction_id = ts.transaction_id
-		        JOIN transaction_types tt ON ts.type_id = tt.type_id
-		        WHERE 
-		            t.status IN ('Pending', 'In Progress') 
-		            AND DATE(t.date_created) = CURDATE()  -- Filters only today's transactions
-		            AND t.emp_id = '$emp_id'      -- Filters by employee ID
-		        GROUP BY t.queue_number, t.date_created, t.priority, t.status
-		        ORDER BY 
-		            t.priority ASC,  -- Higher priority first
-		            t.date_created DESC, 
-		            t.transaction_id DESC;
-		    ";
-		    
-		    $mydb->setQuery($query); // Bind emp_id to prevent SQL injection
-		    $cur = $mydb->loadResultList();
-		    return $cur;
-		}
+		
 
 		function single_employees($id=0){
 			global $mydb;

@@ -228,7 +228,7 @@
 }
 
 .custom_btn_card {
-    height: 3.5rem; 
+    height: 4rem; 
 }
 
 .bg-purple {

@@ -163,3 +163,392 @@ Stack trace:
 [05-Mar-2025 16:22:24 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
 [05-Mar-2025 16:22:24 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
 [05-Mar-2025 16:22:24 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:30:20 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:30:20 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:30:20 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:30:25 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:30:25 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:30:25 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:30:30 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:30:30 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:30:30 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:30:45 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:30:45 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:30:45 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:30:57 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:30:57 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:30:57 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:30:58 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 38
+[05-Mar-2025 16:30:58 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 69
+[05-Mar-2025 16:31:05 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:31:05 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:31:05 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:31:14 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:31:14 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:31:14 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:11 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:11 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:11 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:21 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:21 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:21 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:26 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[05-Mar-2025 16:32:26 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:26 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:26 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:30 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:30 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:30 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:34 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[05-Mar-2025 16:32:34 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:34 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:34 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:38 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:38 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:38 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:42 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:42 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:42 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:47 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:47 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:47 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:32:58 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:32:58 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:32:58 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:33:06 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:33:06 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:33:06 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:33:12 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:33:12 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:33:12 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:33:18 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:33:18 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:33:18 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:33:23 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:33:23 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:33:23 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:33:23 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 38
+[05-Mar-2025 16:33:23 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 69
+[05-Mar-2025 16:39:58 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 38
+[05-Mar-2025 16:39:58 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 69
+[05-Mar-2025 16:40:01 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:40:01 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:40:01 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:40:06 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:40:06 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:40:06 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:40:06 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:40:06 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:40:06 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:40:06 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:40:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:40:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:40:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:42:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:42:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:42:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:42:30 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:43:46 Asia/Manila] Database query error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`queue`.`transactions`, CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`counter_id`) REFERENCES `counters` (`counter_id`) ON DELETE CASCADE)
+[05-Mar-2025 16:43:46 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:43:46 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:43:46 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:43:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:43:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:43:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:43:46 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:43:55 Asia/Manila] Database query error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`queue`.`transactions`, CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`counter_id`) REFERENCES `counters` (`counter_id`) ON DELETE CASCADE)
+[05-Mar-2025 16:43:55 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:43:55 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:43:55 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:43:55 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:43:55 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:43:55 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:43:55 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:02 Asia/Manila] Database query error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`queue`.`transactions`, CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`counter_id`) REFERENCES `counters` (`counter_id`) ON DELETE CASCADE)
+[05-Mar-2025 16:44:02 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:44:02 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:44:02 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:44:02 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:02 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:02 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:02 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:25 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:25 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:25 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:25 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:44:32 Asia/Manila] Database query error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`queue`.`transactions`, CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`counter_id`) REFERENCES `counters` (`counter_id`) ON DELETE CASCADE)
+[05-Mar-2025 16:44:32 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:44:32 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:44:32 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:45:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:45:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:45:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:45:53 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:46:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:46:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:46:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:46:59 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:47:02 Asia/Manila] Database query error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`queue`.`transactions`, CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`counter_id`) REFERENCES `counters` (`counter_id`) ON DELETE CASCADE)
+[05-Mar-2025 16:47:02 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:47:02 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:47:02 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:48:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:48:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:48:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:48:11 Asia/Manila] PHP Warning:  Undefined property: stdClass::$counter_id in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 135
+[05-Mar-2025 16:48:22 Asia/Manila] Database query error: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`queue`.`transactions`, CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`counter_id`) REFERENCES `counters` (`counter_id`) ON DELETE CASCADE)
+[05-Mar-2025 16:48:22 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:48:22 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:48:22 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:49:40 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:49:40 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:49:40 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:50:21 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:50:21 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:50:21 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:51:28 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:51:28 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:51:28 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:54:48 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:54:48 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:54:48 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:54:57 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:54:57 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:54:57 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:54:57 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 38
+[05-Mar-2025 16:54:57 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 69
+[05-Mar-2025 16:55:02 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:02 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:02 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:08 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:08 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:08 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:16 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:16 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:16 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:20 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:20 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:20 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:24 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:24 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:24 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:27 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[05-Mar-2025 16:55:27 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:27 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:27 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:32 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:32 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:32 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:34 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:34 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:34 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:41 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:41 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:41 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:50 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:50 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:50 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:55:59 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:55:59 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:55:59 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:56:05 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:56:05 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:56:05 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:56:11 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 16:56:11 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 16:56:11 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 16:56:11 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 38
+[05-Mar-2025 16:56:11 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 69
+[05-Mar-2025 17:03:39 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 38
+[05-Mar-2025 17:03:39 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 69
+[05-Mar-2025 17:03:45 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:03:45 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:03:45 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:03:52 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:03:52 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:03:52 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:03:57 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:03:57 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:03:57 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:02 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:02 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:02 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:07 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[05-Mar-2025 17:04:07 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:07 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:07 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:10 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[05-Mar-2025 17:04:10 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:10 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:10 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:13 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:13 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:13 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:16 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:16 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:16 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:21 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:21 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:21 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:30 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:30 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:30 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:35 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:35 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:35 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:38 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:38 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:38 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:40 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:40 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:40 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:42 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[05-Mar-2025 17:04:42 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[05-Mar-2025 17:04:42 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[05-Mar-2025 17:04:42 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 38
+[05-Mar-2025 17:04:42 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 69
+[05-Mar-2025 17:05:32 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 38
+[05-Mar-2025 17:05:32 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 69
+[05-Mar-2025 17:05:40 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 38
+[05-Mar-2025 17:05:40 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 69
+[06-Mar-2025 08:40:52 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:40:52 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:40:52 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:40:52 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 38
+[06-Mar-2025 08:40:52 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 69
+[06-Mar-2025 08:56:45 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 38
+[06-Mar-2025 08:56:45 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 69
+[06-Mar-2025 08:56:48 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:56:48 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:56:48 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:56:57 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:56:57 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:56:57 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:56:58 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 38
+[06-Mar-2025 08:56:58 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier2_dashboard.php on line 69
+[06-Mar-2025 08:57:02 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:02 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:02 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:08 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:08 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:08 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:08 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 4
+[06-Mar-2025 08:57:26 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:26 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:26 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:34 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[06-Mar-2025 08:57:34 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:34 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:34 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:38 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:38 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:38 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:42 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:42 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:42 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:46 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[06-Mar-2025 08:57:46 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:46 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:46 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:51 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:51 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:51 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:54 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[06-Mar-2025 08:57:54 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:54 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:54 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:57:58 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:57:58 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:57:58 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:58:02 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:58:02 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:58:02 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:58:06 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[06-Mar-2025 08:58:06 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:58:06 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:58:06 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:58:15 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:58:15 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:58:15 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:58:21 Asia/Manila] PHP Warning:  Undefined array key "priority_check" in C:\xampp\htdocs\QUEUE\module\dashboard_controller.php on line 23
+[06-Mar-2025 08:58:22 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:58:22 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:58:22 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:58:31 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:58:31 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:58:31 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:58:36 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:58:36 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:58:36 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 08:58:49 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 08:58:49 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 08:58:49 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:21:20 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:21:20 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:21:20 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:21:25 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:21:25 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:21:25 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:21:53 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:21:53 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:21:53 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:22:07 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:22:07 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:22:07 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:22:42 Asia/Manila] PHP Fatal error:  Uncaught Error: Call to undefined method Kiosk1::current_queueNumber() in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php:3
+Stack trace:
+#0 C:\xampp\htdocs\QUEUE\theme\template.php(270): require_once()
+#1 C:\xampp\htdocs\QUEUE\index.php(45): require_once('C:\\xampp\\htdocs...')
+#2 {main}
+  thrown in C:\xampp\htdocs\QUEUE\module\kiosk1_dashboard.php on line 3
+[06-Mar-2025 09:32:54 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:32:54 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:32:54 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:32:59 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:32:59 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:32:59 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:33:04 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:33:04 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:33:04 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:33:16 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:33:16 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:33:16 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:36:16 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:36:16 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:36:16 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:37:59 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:37:59 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:37:59 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:38:04 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:38:04 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:38:04 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:39:14 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:39:14 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:39:14 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:39:17 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:39:17 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:39:17 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:39:19 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:39:19 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:39:19 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:39:19 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 39
+[06-Mar-2025 09:39:19 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 70
+[06-Mar-2025 09:40:14 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 39
+[06-Mar-2025 09:40:14 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 70
+[06-Mar-2025 09:40:16 Asia/Manila] PHP Warning:  Attempt to read property "transaction_id" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 39
+[06-Mar-2025 09:40:16 Asia/Manila] PHP Warning:  Attempt to read property "queue_number" on bool in C:\xampp\htdocs\QUEUE\module\cashier1_dashboard.php on line 70
+[06-Mar-2025 09:43:27 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:43:27 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:43:27 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:43:32 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:43:32 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:43:32 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:43:40 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:43:40 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:43:40 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:43:44 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:43:44 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:43:44 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130
+[06-Mar-2025 09:43:49 Asia/Manila] PHP Warning:  Undefined variable $AY in C:\xampp\htdocs\QUEUE\include\functions.php on line 128
+[06-Mar-2025 09:43:49 Asia/Manila] PHP Warning:  Undefined variable $SEMESTER in C:\xampp\htdocs\QUEUE\include\functions.php on line 129
+[06-Mar-2025 09:43:49 Asia/Manila] PHP Warning:  Undefined variable $ip in C:\xampp\htdocs\QUEUE\include\functions.php on line 130

@@ -7,95 +7,50 @@
 	*/
 	require_once(LIB_PATH.DS.'database.php');
 
-	class Transactions{
+	class Cashier_History{
 		
-		protected static $tbl_name = "transactions";
+		protected static $tbl_name = "cashier_history";
 		function db_fields(){
 			global $mydb;
 			return $mydb->getFieldsOnOneTable(self::$tbl_name);
 		}
 
 		function list_of_cashier(){
-			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name);
-			$cur = $mydb->loadResultList();
-			return $cur;
+		    global $mydb;
+		    // SQL to count pending and completed transactions for each cashier
+		    $mydb->setQuery("
+		        SELECT 
+		            c.counter_name, 
+		            c.counter_id,
+		            COUNT(CASE WHEN t.status = 'Pending' THEN 1 END) AS pending_count,
+		            COUNT(CASE WHEN t.status = 'Completed' THEN 1 END) AS completed_count
+		        FROM " . self::$tbl_name . " c
+		        LEFT JOIN transactions t ON c.counter_id = t.counter_id AND DATE(t.date_created) = CURDATE()
+		        GROUP BY c.counter_name
+		    ");
+		    $cur = $mydb->loadResultList();  // Get the list of cashiers with their pending and completed counts
+		    return $cur;
 		}
 
-		function list_of_cashierKioskTransactions($cashierNumber){
-			global $mydb;
-			$mydb->setQuery("SELECT t.queue_number, c.counter_name
-							FROM ".self::$tbl_name." t
-							JOIN counters c on c.counter_id = t.counter_id 
-							WHERE DATE(date_created) = CURDATE() AND t.status = 'Pending' AND c.counter_name = :cashierNumber
-							ORDER BY FIELD(t.priority, 'Yes', 'No') ASC,
-				            DATE(date_created) ASC, t.transaction_id ASC", [':cashierNumber' => $cashierNumber]);
-			$cur = $mydb->loadResultList();
-			return $cur;
-		}
 
-		function get_nextQueueNumber($cashierNumber){
+		function get_currentLastCompletedQueueNumber($cashierNumber){
 		    global $mydb;
 		    
 		    // Corrected query
 		    $mydb->setQuery("
 		        SELECT t.queue_number 
-		        FROM ".self::$tbl_name." t
+		        FROM " . self::$tbl_name . " ch
+		        JOIN transactions t ON ch.transaction_id = t.transaction_id 
 		        JOIN counters c ON c.counter_id = t.counter_id 
-		        WHERE DATE(t.date_created) = CURDATE() 
-		          AND t.status = 'Pending' 
+		        WHERE DATE(ch.action_date) = CURDATE() 
+		          AND t.status = 'Completed' 
 		          AND c.counter_name = :cashierNumber
-		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
-		                 DATE(date_created) ASC, t.transaction_id ASC
-		        LIMIT 1 OFFSET 1
-		    ", [':cashierNumber' => $cashierNumber]);
+		         ORDER BY DATE(ch.action_date) ASC, ch.history_id DESC
+		        LIMIT 1", [':cashierNumber' => $cashierNumber]);
 		    
 		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
 		    return $cur;
 		}
-
-		function get_nextNextQueueNumber($cashierNumber){
-		    global $mydb;
-		    
-		    // Corrected query
-		    $mydb->setQuery("
-		        SELECT t.queue_number 
-		        FROM ".self::$tbl_name." t
-		        JOIN counters c ON c.counter_id = t.counter_id 
-		        WHERE DATE(t.date_created) = CURDATE() 
-		          AND t.status = 'Pending' 
-		          AND c.counter_name = :cashierNumber
-		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
-		                 DATE(date_created) ASC, t.transaction_id ASC
-		        LIMIT 1 OFFSET 2
-		    ", [':cashierNumber' => $cashierNumber]);
-		    
-		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
-		    return $cur;
-		}
-
-		function get_currentQueueNumber($cashierNumber){
-		    global $mydb;
-		    
-		    // Corrected query
-		    $mydb->setQuery("
-		        SELECT t.queue_number, t.transaction_id
-		        FROM " . self::$tbl_name . " t
-		        JOIN counters c ON c.counter_id = t.counter_id 
-		        WHERE DATE(t.date_created) = CURDATE() 
-		          AND t.status = 'Pending' 
-		          AND c.counter_name = :cashierNumber
-		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
-		                 DATE(date_created) ASC, t.transaction_id ASC
-		        LIMIT 1
-		    ", [':cashierNumber' => $cashierNumber]);
-		    
-		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
-		    return $cur;
-		}
-
-
-
 
 		function single_employees($id=0){
 			global $mydb;
@@ -202,34 +157,8 @@
 		    try {
 		        $attributes = $this->sanitized_attributes();
 
-		        $uniqid = uniqid();
-
-		        // Directory to save the QR code image (make sure this directory exists and is writable)
-		        $qrCodePath = __DIR__ . '/../phpqrcode/qrlib.php';
-				// if (!file_exists($qrCodePath)) {
-				//     message("The QR code generator file is missing.", "error");
-				//     redirect(WEB_ROOT . 'employees/');
-				//     return;
-				// }
-
-				require_once $qrCodePath;  // require the path of the phpqrcode qrlib.php
-
-				$upload_dir = __DIR__ . '/../img/QRCodes/'; // path to save qrcode
-
-				// if (!file_exists($upload_dir)) {
-				//     message("The QR codes folder is missing.", "error");
-				//     redirect(WEB_ROOT . 'employees/');
-				//     return;
-				// }
-
-				$uniqid = uniqid();
-				$qr_filename = $uniqid . $this->username . '.png';
-				$qr_full_path = $upload_dir . $qr_filename;
-
-				QRcode::png($qr_filename, $qr_full_path, QR_ECLEVEL_L, 4); // generate a qrcode and save in to file path
-
-		        // Add the qr_code filename attribute into database
-		        $attributes['qr_code'] = $qr_filename; 
+		        // Add date created todays date and time 
+		        $attributes['action_date'] = date('Y-m-d H:i:s');
 
 		        // Build the SQL with placeholders
 		        $placeholders = array_map(function($key) {

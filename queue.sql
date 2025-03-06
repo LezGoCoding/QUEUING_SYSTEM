@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2025 at 08:29 AM
+-- Generation Time: Mar 06, 2025 at 02:44 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `queue`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cashier_history`
+--
+
+CREATE TABLE `cashier_history` (
+  `history_id` int(11) NOT NULL,
+  `transaction_id` int(11) NOT NULL,
+  `action_date` datetime NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `cashier_history`
+--
+
+INSERT INTO `cashier_history` (`history_id`, `transaction_id`, `action_date`, `status`) VALUES
+(2, 56, '2025-03-06 09:33:04', 'Completed'),
+(3, 58, '2025-03-06 09:33:16', 'Completed'),
+(4, 63, '2025-03-06 09:36:16', 'Completed'),
+(5, 64, '2025-03-06 09:37:59', 'Completed'),
+(6, 57, '2025-03-06 09:38:04', 'Completed'),
+(7, 62, '2025-03-06 09:39:14', 'Completed'),
+(8, 65, '2025-03-06 09:39:17', 'Completed'),
+(9, 67, '2025-03-06 09:39:19', 'Completed'),
+(10, 56, '2025-03-06 09:43:27', 'Completed'),
+(11, 58, '2025-03-06 09:43:32', 'Completed'),
+(12, 63, '2025-03-06 09:43:40', 'Completed'),
+(13, 64, '2025-03-06 09:43:44', 'Completed'),
+(14, 57, '2025-03-06 09:43:49', 'Completed');
 
 -- --------------------------------------------------------
 
@@ -503,7 +535,135 @@ INSERT INTO `tbl_logs` (`LOGID`, `USERID`, `USER_NAME`, `ACTION`, `DATELOG`, `TI
 (170491, 'cashier2', 'Santos, Maria', 'Login to the system.', '2025-03-05', '15:13:51', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
 (170492, 'cashier2', 'Santos, Maria', 'Transaction with ID 19 has been updated successfully!', '2025-03-05', '15:24:06', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
 (170493, 'cashier2', 'Santos, Maria', 'Transaction with ID 18 has been updated successfully!', '2025-03-05', '15:24:12', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
-(170494, 'cashier2', 'Santos, Maria', 'Transaction with ID 17 has been updated successfully!', '2025-03-05', '15:24:18', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL);
+(170494, 'cashier2', 'Santos, Maria', 'Transaction with ID 17 has been updated successfully!', '2025-03-05', '15:24:18', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170495, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-05', '16:15:29', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170496, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:16:28', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170497, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:16:38', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170498, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:16:53', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170499, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:17:02', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170500, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:17:07', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170501, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-05', '16:17:11', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170502, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-05', '16:17:25', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170503, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 27 has been updated successfully!', '2025-03-05', '16:17:37', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170504, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 25 has been updated successfully!', '2025-03-05', '16:17:43', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170505, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 21 has been updated successfully!', '2025-03-05', '16:17:51', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170506, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 26 has been updated successfully!', '2025-03-05', '16:17:58', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170507, 'cashier1', 'Dela Cruz, Juan', 'Logout to the system.', '2025-03-05', '16:18:08', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170508, 'cashier2', 'Santos, Maria', 'Login to the system.', '2025-03-05', '16:18:13', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170509, 'cashier2', 'Santos, Maria', 'Transaction with ID 28 has been updated successfully!', '2025-03-05', '16:18:19', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170510, 'cashier2', 'Santos, Maria', 'Transaction with ID 24 has been updated successfully!', '2025-03-05', '16:18:25', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170511, 'cashier2', 'Santos, Maria', 'Transaction with ID 15 has been updated successfully!', '2025-03-05', '16:20:26', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170512, 'cashier2', 'Santos, Maria', 'Logout to the system.', '2025-03-05', '16:20:47', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170513, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-05', '16:20:52', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170514, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-05', '16:21:07', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL);
+INSERT INTO `tbl_logs` (`LOGID`, `USERID`, `USER_NAME`, `ACTION`, `DATELOG`, `TIMELOG`, `user_ip_address`, `device_used`, `PORTAL`, `AY`, `SEMESTER`, `COMPANYID`, `CAMPUSID`, `IDENTIFIER`, `ACCOUNT_ID`) VALUES
+(170515, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-05', '16:21:12', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170516, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 20 has been updated successfully!', '2025-03-05', '16:21:53', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170517, 'cashier1', 'Dela Cruz, Juan', 'Logout to the system.', '2025-03-05', '16:21:57', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170518, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-05', '16:22:03', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170519, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:22:10', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170520, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:22:15', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170521, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-05', '16:22:18', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170522, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-05', '16:22:24', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170523, 'cashier1', 'Dela Cruz, Juan', 'Logout to the system.', '2025-03-05', '16:30:20', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170524, 'cashier2', 'Santos, Maria', 'Login to the system.', '2025-03-05', '16:30:25', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170525, 'cashier2', 'Santos, Maria', 'Logout to the system.', '2025-03-05', '16:30:30', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170526, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-05', '16:30:45', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170527, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 29 has been updated successfully!', '2025-03-05', '16:30:57', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170528, 'cashier1', 'Dela Cruz, Juan', 'Logout to the system.', '2025-03-05', '16:31:05', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170529, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-05', '16:31:14', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170530, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:32:11', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170531, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:32:21', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170532, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:32:26', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170533, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:32:30', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170534, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:32:34', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170535, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:32:38', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170536, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-05', '16:32:42', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170537, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-05', '16:32:47', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170538, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 36 has been updated successfully!', '2025-03-05', '16:32:58', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170539, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 32 has been updated successfully!', '2025-03-05', '16:33:06', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170540, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 31 has been updated successfully!', '2025-03-05', '16:33:12', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170541, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 35 has been updated successfully!', '2025-03-05', '16:33:18', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170542, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 33 has been updated successfully!', '2025-03-05', '16:33:23', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170543, 'cashier1', 'Dela Cruz, Juan', 'Logout to the system.', '2025-03-05', '16:40:01', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170544, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-05', '16:40:06', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170545, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:43:46', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170546, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:43:55', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170547, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:44:02', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170548, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:44:32', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170549, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:47:02', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170550, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:48:22', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170551, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:49:40', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170552, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:50:21', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170553, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:51:28', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170554, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-05', '16:54:48', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170555, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-05', '16:54:57', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170556, 'cashier1', 'Dela Cruz, Juan', 'Logout to the system.', '2025-03-05', '16:55:02', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170557, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-05', '16:55:08', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170558, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:55:16', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170559, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:55:20', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170560, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:55:24', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170561, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:55:27', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170562, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '16:55:32', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170563, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-05', '16:55:34', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170564, 'cashier2', 'Santos, Maria', 'Login to the system.', '2025-03-05', '16:55:41', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170565, 'cashier2', 'Santos, Maria', 'Transaction with ID 50 has been updated successfully!', '2025-03-05', '16:55:50', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170566, 'cashier2', 'Santos, Maria', 'Transaction with ID 46 has been updated successfully!', '2025-03-05', '16:55:59', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170567, 'cashier2', 'Santos, Maria', 'Transaction with ID 34 has been updated successfully!', '2025-03-05', '16:56:05', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170568, 'cashier2', 'Santos, Maria', 'Transaction with ID 30 has been updated successfully!', '2025-03-05', '16:56:11', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170569, 'cashier2', 'Santos, Maria', 'Logout to the system.', '2025-03-05', '17:03:45', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170570, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-05', '17:03:52', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170571, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '17:03:57', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170572, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '17:04:02', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170573, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '17:04:07', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170574, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '17:04:10', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170575, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-05', '17:04:13', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170576, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-05', '17:04:16', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170577, 'cashier2', 'Santos, Maria', 'Login to the system.', '2025-03-05', '17:04:21', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170578, 'cashier2', 'Santos, Maria', 'Transaction with ID 55 has been updated successfully!', '2025-03-05', '17:04:30', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170579, 'cashier2', 'Santos, Maria', 'Transaction with ID 52 has been updated successfully!', '2025-03-05', '17:04:35', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170580, 'cashier2', 'Santos, Maria', 'Transaction with ID 51 has been updated successfully!', '2025-03-05', '17:04:38', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170581, 'cashier2', 'Santos, Maria', 'Transaction with ID 54 has been updated successfully!', '2025-03-05', '17:04:40', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170582, 'cashier2', 'Santos, Maria', 'Transaction with ID 53 has been updated successfully!', '2025-03-05', '17:04:42', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170583, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-06', '08:40:52', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170584, 'cashier1', 'Dela Cruz, Juan', 'Logout to the system.', '2025-03-06', '08:56:48', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170585, 'cashier2', 'Santos, Maria', 'Login to the system.', '2025-03-06', '08:56:57', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170586, 'cashier2', 'Santos, Maria', 'Logout to the system.', '2025-03-06', '08:57:02', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170587, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-06', '08:57:08', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170588, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:57:26', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170589, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:57:34', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170590, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:57:38', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170591, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:57:42', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170592, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:57:46', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170593, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:57:51', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170594, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:57:54', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170595, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:57:58', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170596, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:58:02', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170597, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:58:06', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170598, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:58:15', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170599, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '08:58:22', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170600, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-06', '08:58:31', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170601, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-06', '08:58:36', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170602, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 64 has been updated successfully!', '2025-03-06', '08:58:49', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170603, 'cashier1', 'Dela Cruz, Juan', 'Logout to the system.', '2025-03-06', '09:21:20', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170604, 'kiosk1', 'Silang, Gabriela', 'Login to the system.', '2025-03-06', '09:21:25', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170605, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '09:21:53', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170606, 'kiosk1', 'Silang, Gabriela', 'New Transaction has been created successfully!', '2025-03-06', '09:22:07', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'INSERT', NULL),
+(170607, 'kiosk1', 'Silang, Gabriela', 'Logout to the system.', '2025-03-06', '09:32:54', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGOUT', NULL),
+(170608, 'cashier1', 'Dela Cruz, Juan', 'Login to the system.', '2025-03-06', '09:32:59', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'LOGIN', NULL),
+(170609, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 56 has been updated successfully!', '2025-03-06', '09:33:04', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170610, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 58 has been updated successfully!', '2025-03-06', '09:33:16', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170611, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 63 has been updated successfully!', '2025-03-06', '09:36:16', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170612, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 64 has been updated successfully!', '2025-03-06', '09:37:59', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170613, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 57 has been updated successfully!', '2025-03-06', '09:38:04', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170614, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 62 has been updated successfully!', '2025-03-06', '09:39:14', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170615, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 65 has been updated successfully!', '2025-03-06', '09:39:17', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170616, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 67 has been updated successfully!', '2025-03-06', '09:39:19', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170617, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 56 has been updated successfully!', '2025-03-06', '09:43:27', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170618, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 58 has been updated successfully!', '2025-03-06', '09:43:32', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170619, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 63 has been updated successfully!', '2025-03-06', '09:43:40', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170620, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 64 has been updated successfully!', '2025-03-06', '09:43:44', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL),
+(170621, 'cashier1', 'Dela Cruz, Juan', 'Transaction with ID 57 has been updated successfully!', '2025-03-06', '09:43:49', '', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 12, '', '', NULL, NULL, 'UPDATE', NULL);
 
 -- --------------------------------------------------------
 
@@ -535,40 +695,65 @@ INSERT INTO `transactions` (`transaction_id`, `queue_number`, `priority`, `date_
 (10, '#0008', 'Yes', '2025-03-04 15:28:08', 2, 'Pending'),
 (11, '#0009', 'Yes', '2025-03-04 15:28:08', 1, 'Pending'),
 (12, '#0010', 'No', '2025-03-04 15:28:08', 2, 'Pending'),
-(15, '#0001', 'Yes', '2025-03-05 09:38:16', 2, 'Pending'),
+(15, '#0001', 'Yes', '2025-03-05 09:38:16', 2, 'Completed'),
 (16, '#0002', 'Yes', '2025-03-05 09:45:49', 3, 'Pending'),
 (17, '#0003', 'Yes', '2025-03-05 09:45:58', 2, 'Completed'),
 (18, '#0004', 'Yes', '2025-03-05 09:46:07', 2, 'Completed'),
 (19, '#0005', 'Yes', '2025-03-05 09:47:23', 2, 'Completed'),
-(20, '#0006', 'No', '2025-03-05 09:47:33', 1, 'Pending'),
-(21, '#0007', 'Yes', '2025-03-05 09:47:41', 1, 'Pending'),
+(20, '#0006', 'No', '2025-03-05 09:47:33', 1, 'Completed'),
+(21, '#0007', 'Yes', '2025-03-05 09:47:41', 1, 'Completed'),
 (22, '#0008', 'Yes', '2025-03-05 09:55:48', 2, 'Completed'),
-(23, '#0009', 'Yes', '2025-03-05 10:23:38', 3, 'Pending');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `transaction_types`
---
-
-CREATE TABLE `transaction_types` (
-  `type_id` int(11) NOT NULL,
-  `transaction_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `transaction_types`
---
-
-INSERT INTO `transaction_types` (`type_id`, `transaction_name`) VALUES
-(1, 'Certificate of Enrollment'),
-(2, 'Certificate of Assessment'),
-(3, 'Rating Card'),
-(4, 'Tuition Payment');
+(23, '#0009', 'Yes', '2025-03-05 10:23:38', 3, 'Pending'),
+(24, '#0010', 'Yes', '2025-03-05 16:16:28', 2, 'Pending'),
+(25, '#0011', 'Yes', '2025-03-05 16:16:38', 1, 'Completed'),
+(26, '#0012', 'No', '2025-03-05 16:16:53', 1, 'Completed'),
+(27, '#0013', 'Yes', '2025-03-05 16:17:02', 1, 'Completed'),
+(28, '#0014', 'Yes', '2025-03-05 16:17:07', 2, 'Completed'),
+(29, '#0015', 'Yes', '2025-03-05 16:22:10', 1, 'Completed'),
+(30, '#0016', 'Yes', '2025-03-05 16:22:15', 2, 'Completed'),
+(31, '#0017', 'Yes', '2025-03-05 16:32:11', 1, 'Completed'),
+(32, '#0018', 'Yes', '2025-03-05 16:32:21', 1, 'Completed'),
+(33, '#0019', 'No', '2025-03-05 16:32:26', 1, 'Completed'),
+(34, '#0020', 'Yes', '2025-03-05 16:32:30', 2, 'Completed'),
+(35, '#0021', 'No', '2025-03-05 16:32:34', 1, 'Completed'),
+(36, '#0022', 'Yes', '2025-03-05 16:32:38', 1, 'Completed'),
+(43, '#0023', 'Yes', '2025-03-05 16:49:40', 4, 'Pending'),
+(44, '#0024', 'Yes', '2025-03-05 16:50:21', 4, 'Pending'),
+(45, '#0025', 'Yes', '2025-03-05 16:51:28', 4, 'Pending'),
+(46, '#0026', 'Yes', '2025-03-05 16:55:16', 2, 'Completed'),
+(47, '#0027', 'Yes', '2025-03-05 16:55:20', 1, 'Pending'),
+(48, '#0028', 'Yes', '2025-03-05 16:55:24', 1, 'Pending'),
+(49, '#0029', 'No', '2025-03-05 16:55:27', 1, 'Pending'),
+(50, '#0030', 'Yes', '2025-03-05 16:55:32', 2, 'Pending'),
+(51, '#0031', 'Yes', '2025-03-05 17:03:57', 2, 'Pending'),
+(52, '#0032', 'Yes', '2025-03-05 17:04:02', 2, 'Pending'),
+(53, '#0033', 'No', '2025-03-05 17:04:07', 2, 'Pending'),
+(54, '#0034', 'No', '2025-03-05 17:04:10', 2, 'Pending'),
+(55, '#0035', 'Yes', '2025-03-05 17:04:13', 2, 'Pending'),
+(56, '#0001', 'Yes', '2025-03-06 08:57:26', 1, 'Completed'),
+(57, '#0002', 'No', '2025-03-06 08:57:34', 1, 'Completed'),
+(58, '#0003', 'Yes', '2025-03-06 08:57:38', 1, 'Completed'),
+(59, '#0004', 'Yes', '2025-03-06 08:57:42', 2, 'Pending'),
+(60, '#0005', 'No', '2025-03-06 08:57:46', 2, 'Pending'),
+(61, '#0006', 'Yes', '2025-03-06 08:57:51', 2, 'Pending'),
+(62, '#0007', 'No', '2025-03-06 08:57:54', 1, 'Pending'),
+(63, '#0008', 'Yes', '2025-03-06 08:57:58', 1, 'Completed'),
+(64, '#0009', 'Yes', '2025-03-06 08:58:02', 1, 'Completed'),
+(65, '#0010', 'No', '2025-03-06 08:58:06', 1, 'Pending'),
+(66, '#0011', 'Yes', '2025-03-06 08:58:15', 2, 'Pending'),
+(67, '#0012', 'No', '2025-03-06 08:58:22', 1, 'Pending'),
+(68, '#0013', 'Yes', '2025-03-06 09:21:53', 2, 'Pending'),
+(69, '#0014', 'Yes', '2025-03-06 09:22:07', 2, 'Pending');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `cashier_history`
+--
+ALTER TABLE `cashier_history`
+  ADD PRIMARY KEY (`history_id`);
 
 --
 -- Indexes for table `counters`
@@ -608,14 +793,14 @@ ALTER TABLE `transactions`
   ADD KEY `transactions_ibfk_1` (`counter_id`);
 
 --
--- Indexes for table `transaction_types`
---
-ALTER TABLE `transaction_types`
-  ADD PRIMARY KEY (`type_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `cashier_history`
+--
+ALTER TABLE `cashier_history`
+  MODIFY `history_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `counters`
@@ -639,19 +824,13 @@ ALTER TABLE `loginattemp`
 -- AUTO_INCREMENT for table `tbl_logs`
 --
 ALTER TABLE `tbl_logs`
-  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170495;
+  MODIFY `LOGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170622;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
---
--- AUTO_INCREMENT for table `transaction_types`
---
-ALTER TABLE `transaction_types`
-  MODIFY `type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- Constraints for dumped tables
