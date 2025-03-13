@@ -46,6 +46,13 @@
           <button type="submit" hidden class="btn btn-success">Submit</button>
         </form>
 
+        <form hidden id="receiveCustomerForm" method="POST" action="<?php echo WEB_ROOT; ?>module/dashboard_controller.php">
+          <input type="hidden" name="route" value="receiveCustomerTransaction">
+          <input type="number" name="cashierID" value="<?= $_SESSION['ACCOUNT_ID']?>">
+          <button type="submit" hidden class="btn btn-success">Submit</button>
+        </form>
+
+
         <div class="col-lg-4 col-md-6 col-12">
           <h5 class="text-center">
             <!-- <i class="bi bi-arrow-right"></i>  -->
@@ -136,6 +143,15 @@
           </div>
         </div>
       </div><!-- End Recent Activity -->
+
+      <div class="row">
+         <div class="col-lg-12 col-md-6 col-12 ">
+          <button id="receiveCustomerBtn" type="button" class="btn btn-lg btn-primary w-100">
+              <i class="fas fa-handshake"></i> RECEIVE CUSTOMERS
+          </button>
+        </div>
+      </div>
+     
     </div><!-- End Right side columns -->
   </div>
 </section>
@@ -167,13 +183,23 @@
       cancelFormData();
   });
 
+  document.getElementById('receiveCustomerBtn').addEventListener('click', function () {
+      // Now submit the form
+      receiveCustomerFormData();
+  });
+
+  function submitFormData() {
+      let form = document.getElementById('customerOrderForm');
+      form.submit();  // This will submit the form data normally, without AJAX
+  }
+
    function cancelFormData() {
       let form = document.getElementById('cancelCustomerOrderForm');
       form.submit();  // This will submit the form data normally, without AJAX
   }
 
-  function submitFormData() {
-      let form = document.getElementById('customerOrderForm');
+  function receiveCustomerFormData() {
+      let form = document.getElementById('receiveCustomerForm');
       form.submit();  // This will submit the form data normally, without AJAX
   }
 

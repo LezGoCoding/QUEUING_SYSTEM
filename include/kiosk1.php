@@ -24,12 +24,37 @@
 
 		function list_of_kioskTransactions(){
 			global $mydb;
-			$mydb->setQuery("SELECT t.queue_number, c.counter_name
+			$mydb->setQuery("SELECT t.queue_number, t.priority
 							FROM ".self::$tbl_name." t
-							JOIN counters c on c.counter_id = t.counter_id 
+							-- JOIN counters c on c.counter_id = t.counter_id 
 							WHERE DATE(date_created) = CURDATE() AND t.status = 'Pending'
 							ORDER BY FIELD(T.priority, 'Yes', 'No') ASC,
 				            DATE(date_created) ASC, t.transaction_id ASC");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
+
+		function getCountCashierPendingTransaction($counter_id){
+			global $mydb;
+			$mydb->setQuery("SELECT t.queue_number, t.transaction_id
+							FROM ".self::$tbl_name." t
+							WHERE t.counter_id = {$counter_id} AND
+								DATE(t.date_created) = CURDATE() AND t.status = 'Pending'
+							ORDER BY FIELD(T.priority, 'Yes', 'No') ASC,
+				            DATE(t.date_created) ASC, t.transaction_id ASC");
+			$row_count = $mydb->num_rows();
+			return $row_count;
+		}
+
+		function getNoCashierPendingTransaction($limit_num){
+			global $mydb;
+			$mydb->setQuery("SELECT t.transaction_id
+							FROM ".self::$tbl_name." t
+							WHERE t.counter_id = 0 AND
+								DATE(date_created) = CURDATE() AND t.status = 'Pending'
+							ORDER BY FIELD(T.priority, 'Yes', 'No') ASC,
+				            DATE(date_created) ASC, t.transaction_id ASC
+				            LIMIT {$limit_num}");
 			$cur = $mydb->loadResultList();
 			return $cur;
 		}
@@ -40,8 +65,6 @@
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 		}
-
-		
 
 		function single_employees($id=0){
 			global $mydb;
@@ -58,32 +81,6 @@
 			$row_count = $mydb->num_rows();
 			return $row_count;
 		}
-
-
-		static function AuthenticateEmployee($username = "", $password = "") {
-			global $mydb;
-			$sql = "SELECT * FROM employees WHERE `username` = :username LIMIT 1";
-			$params = [
-				':username' => $username
-			];
-			$mydb->setQuery($sql, $params);
-			$row_count = $mydb->num_rows();
-
-			if ($row_count == 1) {
-				$found_user = $mydb->loadSingleResult();
-
-				if (password_verify($password, $found_user->password)) {
-					$_SESSION['ACCOUNT_ID'] 	 	= $found_user->emp_id;
-					$_SESSION['ACCOUNT_NAME'] 		= $found_user->last_name. ', ' . $found_user->first_name;
-					$_SESSION['ACCOUNT_USERNAME']	= $found_user->role;
-					$_SESSION['EMPID'] 				= $found_user->role;
-					return true;
-				}
-			}
-
-			return false;
-		} 
-
 
 	
 		/*---Instantiation of Object dynamically---*/

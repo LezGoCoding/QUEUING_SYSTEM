@@ -30,7 +30,7 @@
                 $routes = ['dashboard' => 'module/cashier3_dashboard.php'];
                 break;
             default:
-                $routes = ['dashboard' => 'module/general_dashboard.php']; // Default for other users
+                $routes = ['dashboard' => 'module/general_dashboard.php']; 
                 break;
         }
         

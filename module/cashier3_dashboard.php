@@ -13,6 +13,7 @@
   }
 
 ?>
+
 <div class="pagetitle">
   <h1>Cashier 3</h1>
   <nav>
@@ -97,7 +98,7 @@
       <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-4 col-md-6 col-12 mb-2">
-          <button <?=$buttonStatus?> id="cancelCustomerBtn" type="button" class="btn btn-lg btn-danger w-100 custom_btn_card">
+          <button <?=$buttonStatus?> id="cancelCustomerBtn" onclick="speakText()" type="button" class="btn btn-lg btn-danger w-100 custom_btn_card">
               <i class="fas fa-times"></i> CANCEL
           </button>
         </div>
