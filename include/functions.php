@@ -32,6 +32,7 @@
 			return "";
 		}
 	}
+	
 	function AllowAccessss($FormID=0)
     {
       global $mydb;

@@ -52,6 +52,26 @@
 		    return $cur;
 		}
 
+		function monitor_get_currentLastCompletedQueueNumber(){
+		    global $mydb;
+		    
+		    // Corrected query
+		    $mydb->setQuery("
+		        SELECT t.queue_number 
+		        FROM " . self::$tbl_name . " ch
+		        JOIN transactions t ON ch.transaction_id = t.transaction_id 
+		        -- JOIN counters c ON c.counter_id = t.counter_id 
+		        WHERE DATE(ch.action_date) = CURDATE() 
+		          AND t.status = 'Completed' 
+		          -- AND c.counter_name = :cashierNumber
+		         ORDER BY DATE(ch.action_date) ASC, ch.history_id DESC
+		        LIMIT 1");
+		        // ", [':cashierNumber' => $cashierNumber]);
+		    
+		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
+		    return $cur;
+		}
+
 		function single_employees($id=0){
 			global $mydb;
 			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where emp_id = :id LIMIT 1", [':id' => $id]);

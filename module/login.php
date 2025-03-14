@@ -1,99 +1,124 @@
 <?php
-require_once("../include/initialize.php");
-global $mydb;
+	require_once("../include/initialize.php");
+	global $mydb;
 
-check_message();
+	check_message();
 
-if (isset($_SESSION['ACCOUNT_ID'])) {
-	header("Location: ../index.php");
-	exit();
-} else { ?>
+	if (isset($_SESSION['ACCOUNT_ID'])) {
+		header("Location: ../index.php");
+		exit();
+	} else { ?>
 
-<?php
-$success_message = "";
-$error_message = "";
+	<?php
+		$success_message = "";
+		$error_message = "";
 
-$query = "SELECT * FROM loginattemp WHERE IPADDRESS = :ipaddress";
-$mydb->setQuery($query, [
-    ':ipaddress' => $_SERVER['REMOTE_ADDR'],
-]);
+		$query = "SELECT * FROM loginattemp WHERE IPADDRESS = :ipaddress";
+		$mydb->setQuery($query, [
+		    ':ipaddress' => $_SERVER['REMOTE_ADDR'],
+		]);
 
-$single_res = $mydb->loadSingleResult();
+		$single_res = $mydb->loadSingleResult();
 
- $displayWarning = 'style="display:none;"'; // Default to hidden
-      if ($single_res && isset($single_res->ATTEMPCOUNT)) {
-        if ($single_res->ATTEMPCOUNT >= 2) {
-            $displayWarning = '';
-     }
-}
+		 $displayWarning = 'style="display:none;"'; // Default to hidden
+		      if ($single_res && isset($single_res->ATTEMPCOUNT)) {
+		        if ($single_res->ATTEMPCOUNT >= 2) {
+		            $displayWarning = '';
+		     }
+		}
 
-if (isset($_POST['btnLogin'])) {
-   $email = htmlspecialchars(trim($_POST['username']));
-   $upass = htmlspecialchars(trim($_POST['userpass']));
-   $h_upass = $upass;
+		if (isset($_POST['btnLogin'])) {
+		   $email = htmlspecialchars(trim($_POST['username']));
+		   $upass = htmlspecialchars(trim($_POST['userpass']));
+		   $h_upass = $upass;
 
-   // Check if either the email or password fields are empty
-   if ($email == '' or $upass == '') {
-      message("Invalid Username and Password!", "error");
-      redirect("login.php");
-   } else {
-      $employee = new Employees();
+		   // Check if either the email or password fields are empty
+		   if ($email == '' or $upass == '') {
+		      message("Invalid Username and Password!", "error");
+		      redirect("login.php");
+		   } else {
+		      $employee = new Employees();
 
-      // Authenticate the user
-      $res = $employee::AuthenticateEmployee($email, $h_upass);
+		      // Authenticate the user
+		      $res = $employee::AuthenticateEmployee($email, $h_upass);
 
-      if ($res == true) {
-            // Session variables
-            $_SESSION['last_activity'] = time();
-			$_SESSION['ACCOUNT_ID']       = $_SESSION['ACCOUNT_ID'];
-			$_SESSION['ACCOUNT_NAME']     = $_SESSION['ACCOUNT_NAME'] ;
-			$_SESSION['ACCOUNT_USERNAME'] = $_SESSION['ACCOUNT_USERNAME'];
-			$_SESSION['EMPID']     = $_SESSION['EMPID'];
-			$_SESSION['ip']          =    $_SERVER['REMOTE_ADDR'];
-			$_SESSION['userAgent']   = $_SERVER['HTTP_USER_AGENT'];
+		      if ($res == true) {
+		            // Session variables
+		            $_SESSION['last_activity'] = time();
+					$_SESSION['ACCOUNT_ID']       = $_SESSION['ACCOUNT_ID'];
+					$_SESSION['ACCOUNT_NAME']     = $_SESSION['ACCOUNT_NAME'] ;
+					$_SESSION['ACCOUNT_USERNAME'] = $_SESSION['ACCOUNT_USERNAME'];
+					$_SESSION['EMPID']     = $_SESSION['EMPID'];
+					$_SESSION['ip']          =    $_SERVER['REMOTE_ADDR'];
+					$_SESSION['userAgent']   = $_SERVER['HTTP_USER_AGENT'];
 
-			$query = "UPDATE `loginattemp` SET ATTEMPCOUNT = 0 WHERE IPADDRESS = :ipaddress";
-            $istrue = $mydb->InsertThis($query, [
-              ':ipaddress' => $_SERVER['REMOTE_ADDR'],
-            ]);
+					$query = "UPDATE `loginattemp` SET ATTEMPCOUNT = 0 WHERE IPADDRESS = :ipaddress";
+		            $istrue = $mydb->InsertThis($query, [
+		              ':ipaddress' => $_SERVER['REMOTE_ADDR'],
+		            ]);
 
-            DoRecordLogs('Login to the system.', 'LOGIN');
-            $success_message = "Login Successfull!";
-            // redirect(WEB_ROOT.'index.php'); // redirect to index.php
-            redirect(WEB_ROOT); // redirect also to the index.php but trigger the sidebar first menu
+		            DoRecordLogs('Login to the system.', 'LOGIN');
+		            $success_message = "Login Successfull!";
 
-      } else {
+		            $username = $_SESSION['ACCOUNT_USERNAME'];
+		            $routes = '';
+		            // Role-based redirection
+			        switch ($username) {
+			            case 'admin':
+			                $routes = 'kiosk1';
+			                break;
+			            case 'kiosk1':
+			                $routes = 'kiosk1';
+			                break;
+			            case 'cashier1':
+			                $routes = 'cashier1';
+			                break;
+			            case 'cashier2':
+			                $routes = 'cashier2';
+			                break;
+			            case 'cashier3':
+			                $routes = 'cashier3';
+			                break;
+			            default:
+			                $routes = 'index.php';
+			                break;
+			        }
 
-         if (!isset($_SESSION['accesscount'])) {
-            $_SESSION['accesscount'] = 0;
-         }
-         $_SESSION['accesscount']++;
-           $ipAddress = $_SERVER['REMOTE_ADDR'];
-          $query = "SELECT * FROM loginattemp WHERE IPADDRESS = :ipaddress";
-          $mydb->setQuery($query, [
-              ':ipaddress' => $ipAddress,
-          ]);
-          $rowcheck = $mydb->num_rows();
+		            redirect(WEB_ROOT. $routes); 
+		            // redirect(WEB_ROOT. 'index.php'); 
 
-          if ($rowcheck > 0) {
-              $updateQuery = "UPDATE `loginattemp` SET `ATTEMPCOUNT` = `ATTEMPCOUNT` + 1 WHERE IPADDRESS = :ipaddress";
-              $mydb->InsertThis($updateQuery, [
-                  ':ipaddress' => $ipAddress,
-              ]);
-          } else {
-              $insertQuery = "INSERT INTO `loginattemp`(`IPADDRESS`,`ATTEMPCOUNT`) VALUES (:ipaddress, 1)";
-              $mydb->InsertThis($insertQuery, [
-                  ':ipaddress' => $ipAddress,
-              ]);
-          }
+		      } else {
 
-         $remaining = 2 - $single_res->ATTEMPCOUNT;
-         $error_message = 'Account does not exist! You have only ' . $remaining . ' attempt(s) remaining.';
-          
-      }
-   }
-}
-?>
+		         if (!isset($_SESSION['accesscount'])) {
+		            $_SESSION['accesscount'] = 0;
+		         }
+		         $_SESSION['accesscount']++;
+		           $ipAddress = $_SERVER['REMOTE_ADDR'];
+		          $query = "SELECT * FROM loginattemp WHERE IPADDRESS = :ipaddress";
+		          $mydb->setQuery($query, [
+		              ':ipaddress' => $ipAddress,
+		          ]);
+		          $rowcheck = $mydb->num_rows();
+
+		          if ($rowcheck > 0) {
+		              $updateQuery = "UPDATE `loginattemp` SET `ATTEMPCOUNT` = `ATTEMPCOUNT` + 1 WHERE IPADDRESS = :ipaddress";
+		              $mydb->InsertThis($updateQuery, [
+		                  ':ipaddress' => $ipAddress,
+		              ]);
+		          } else {
+		              $insertQuery = "INSERT INTO `loginattemp`(`IPADDRESS`,`ATTEMPCOUNT`) VALUES (:ipaddress, 1)";
+		              $mydb->InsertThis($insertQuery, [
+		                  ':ipaddress' => $ipAddress,
+		              ]);
+		          }
+
+		         $remaining = 2 - $single_res->ATTEMPCOUNT;
+		         $error_message = 'Account does not exist! You have only ' . $remaining . ' attempt(s) remaining.';
+		          
+		      }
+		   }
+		}
+	?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -264,9 +289,7 @@ if (isset($_POST['btnLogin'])) {
 				float: right !important;
 				text-align: right;
 			}
-			
 		</style>
-
 	</head>
 
 	<body>
@@ -335,7 +358,7 @@ if (isset($_POST['btnLogin'])) {
 </html>
 
 <?php
-}
+	}
 ?>
 
 <!-- Required jQuery first, then Bootstrap Bundle JS -->
@@ -365,7 +388,6 @@ if (isset($_POST['btnLogin'])) {
 <script src="<?php echo WEB_ROOT ?>vendor/wizard/jquery.steps.custom.js"></script>
 <script type="text/javascript" src="<?php echo WEB_ROOT ?>vendor/font-awesome/js/all.js"></script>
 <script type="text/javascript" src="<?php echo WEB_ROOT ?>vendor/toastr/toastr.min.js"></script>
-
 
 <!-- NICE ADMIN SCRIPTS -->
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

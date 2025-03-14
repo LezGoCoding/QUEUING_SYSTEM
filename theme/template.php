@@ -220,20 +220,68 @@
 }
 
 .custom_card {
-    height: 11rem; 
+    height: 12rem; 
     display: flex;
     flex-direction: column; 
     justify-content: center; 
     align-items: center;
 }
 
+.monitor_custom_card {
+    height: 28rem; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    border: 5px solid orange !important;
+    color: orange !important;
+    font-weight: bold !important;
+    border-radius: 15px !important;
+}
+
+.bg-orange{
+    background-color: orange !important;
+}
+.text-orange{
+    color: orange !important;
+}
+.text-navy-blue{
+    color: #003f87 !important;
+}
+.bg-navy-blue{
+    background-color: #003f87 !important;
+/*    color: #fff !important;*/
+}
+
+.next-customer-card{
+    height: 6.5rem;
+    border: 2px solid #003f87 !important;
+    border-radius: 15px !important;
+    color: #003f87 !important;
+}
+    
+.custom-h1{
+    color: #003f87;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+.window-name{
+    font-size: 2rem;
+}
 .custom_btn_card {
     height: 4rem; 
+}
+.btn-customer{
+    height: 6rem;
 }
 
 .bg-purple {
     background-color: #6a0dad; 
     color: white;
+}
+
+.bg-violet{
+    background-color: #6a0dad; 
 }
 
 .btn-outline {
@@ -252,6 +300,29 @@
 .custom-toast-container {
     margin: 0;
 }
+
+.responsive-heading {
+  font-size: 2rem; /* Default size */
+  text-align: center; /* Center text */
+  margin: 0 auto; /* Center inside parent */
+  word-break: break-word; /* Prevent overflow */
+  white-space: nowrap; /* Optional: prevent breaking into two lines */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ... if too long */
+}
+
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: 1.5rem; /* Smaller size on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-heading {
+    font-size: 1.2rem; /* Even smaller on mobile */
+  }
+}
+
 
 }
 </style>
@@ -306,6 +377,7 @@
 <script src="<?php echo WEB_ROOT ?>vendor/apex/apexcharts.min.js"></script>
 <!-- Include RowReorder JS -->
 <script type="text/javascript" src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 <!-- Main JS -->
 <script src="<?php echo WEB_ROOT ?>js/main.js"></script>

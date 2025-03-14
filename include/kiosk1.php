@@ -21,6 +21,17 @@
 			$cur = $mydb->loadResultList();
 			return $cur;
 		}
+		function list_of_monitorkioskTransactions(){
+			global $mydb;
+			$mydb->setQuery("SELECT t.queue_number, t.priority
+							FROM ".self::$tbl_name." t
+							-- JOIN counters c on c.counter_id = t.counter_id 
+							WHERE DATE(date_created) = CURDATE() AND t.status = 'Pending'
+							ORDER BY FIELD(T.priority, 'Yes', 'No') ASC,
+				            DATE(date_created) ASC, t.transaction_id ASC LIMIT 18446744073709551615 OFFSET 1");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
 
 		function list_of_kioskTransactions(){
 			global $mydb;
@@ -46,7 +57,7 @@
 			return $row_count;
 		}
 
-		function getNoCashierPendingTransaction($limit_num){
+		function getNoCashierPendingTransaction(){
 			global $mydb;
 			$mydb->setQuery("SELECT t.transaction_id
 							FROM ".self::$tbl_name." t
@@ -54,7 +65,7 @@
 								DATE(date_created) = CURDATE() AND t.status = 'Pending'
 							ORDER BY FIELD(T.priority, 'Yes', 'No') ASC,
 				            DATE(date_created) ASC, t.transaction_id ASC
-				            LIMIT {$limit_num}");
+				            LIMIT 1");
 			$cur = $mydb->loadResultList();
 			return $cur;
 		}

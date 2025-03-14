@@ -34,7 +34,8 @@
 			return $cur;
 		}
 
-		function get_nextQueueNumber($cashierNumber){
+		// CASHIER MONITOR DISPLAY
+		function get_nextQueueNumber(){
 		    global $mydb;
 		    
 		    // Corrected query
@@ -54,7 +55,7 @@
 		    return $cur;
 		}
 
-		function get_nextNextQueueNumber($cashierNumber){
+		function get_nextNextQueueNumber(){
 		    global $mydb;
 		    
 		    // Corrected query
@@ -68,7 +69,7 @@
 		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
 		                 DATE(date_created) ASC, t.transaction_id ASC
 		        LIMIT 1 OFFSET 2
-		    ", [':cashierNumber' => $cashierNumber]);
+		    ",[':cashierNumber' => $cashierNumber]);
 		    
 		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
 		    return $cur;
@@ -83,7 +84,7 @@
 		        FROM " . self::$tbl_name . " t
 		        JOIN counters c ON c.counter_id = t.counter_id 
 		        WHERE DATE(t.date_created) = CURDATE() 
-		          AND t.status = 'Pending' 
+		          AND t.status = 'Now Serving' 
 		          AND c.counter_name = :cashierNumber
 		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
 		                 DATE(date_created) ASC, t.transaction_id ASC
@@ -94,8 +95,67 @@
 		    return $cur;
 		}
 
+		// LIVE MONITOR DISPLAY
+		function monitor_get_nextQueueNumber(){
+		    global $mydb;
+		    
+		    // Corrected query
+		    $mydb->setQuery("
+		        SELECT t.queue_number 
+		        FROM ".self::$tbl_name." t
+		        -- JOIN counters c ON c.counter_id = t.counter_id 
+		        WHERE DATE(t.date_created) = CURDATE() 
+		          AND t.status = 'Pending' 
+		          -- AND c.counter_name = :cashierNumber
+		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
+		                 DATE(date_created) ASC, t.transaction_id ASC
+		        LIMIT 1 OFFSET 1
+		    ");
+		    // ", [':cashierNumber' => $cashierNumber]);
+		    
+		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
+		    return $cur;
+		}
 
+		function monitor_get_nextNextQueueNumber(){
+		    global $mydb;
+		    
+		    // Corrected query
+		    $mydb->setQuery("
+		        SELECT t.queue_number 
+		        FROM ".self::$tbl_name." t
+		        -- JOIN counters c ON c.counter_id = t.counter_id 
+		        WHERE DATE(t.date_created) = CURDATE() 
+		          AND t.status = 'Pending' 
+		          -- AND c.counter_name = :cashierNumber
+		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
+		                 DATE(date_created) ASC, t.transaction_id ASC
+		        LIMIT 1 OFFSET 2
+		    ");
+		    // ", [':cashierNumber' => $cashierNumber]);
+		    
+		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
+		    return $cur;
+		}
 
+		function monitor_get_currentQueueNumber(){
+		    global $mydb;
+		    
+		    // Corrected query
+		    $mydb->setQuery("
+		        SELECT t.queue_number, t.transaction_id, c.counter_name
+		        FROM " . self::$tbl_name . " t
+		        JOIN counters c ON c.counter_id = t.counter_id 
+		        WHERE DATE(t.date_created) = CURDATE() 
+		          AND t.status = 'Now Serving' 
+		        ORDER BY DATE(date_created) DESC, t.transaction_id DESC
+		        LIMIT 1
+		    ");
+		    // ", [':cashierNumber' => $cashierNumber]);
+		    
+		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
+		    return $cur;
+		}
 
 		function single_employees($id=0){
 			global $mydb;
@@ -112,7 +172,6 @@
 			$row_count = $mydb->num_rows();
 			return $row_count;
 		}
-
 
 		static function AuthenticateEmployee($username = "", $password = "") {
 			global $mydb;
@@ -137,7 +196,6 @@
 
 			return false;
 		} 
-
 
 	
 		/*---Instantiation of Object dynamically---*/
