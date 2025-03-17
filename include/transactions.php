@@ -24,10 +24,10 @@
 
 		function list_of_cashierKioskTransactions($cashierNumber){
 			global $mydb;
-			$mydb->setQuery("SELECT t.queue_number, c.counter_name
+			$mydb->setQuery("SELECT t.queue_number, t.counter_name
 							FROM ".self::$tbl_name." t
-							JOIN counters c on c.counter_id = t.counter_id 
-							WHERE DATE(date_created) = CURDATE() AND t.status = 'Pending' AND c.counter_name = :cashierNumber
+							-- JOIN counters c on c.counter_id = t.counter_id 
+							WHERE DATE(date_created) = CURDATE() AND t.status = 'Pending' AND t.counter_name = :cashierNumber
 							ORDER BY FIELD(t.priority, 'Yes', 'No') ASC,
 				            DATE(date_created) ASC, t.transaction_id ASC", [':cashierNumber' => $cashierNumber]);
 			$cur = $mydb->loadResultList();
@@ -42,10 +42,10 @@
 		    $mydb->setQuery("
 		        SELECT t.queue_number 
 		        FROM ".self::$tbl_name." t
-		        JOIN counters c ON c.counter_id = t.counter_id 
+		        -- JOIN counters c ON t.counter_id = t.counter_id 
 		        WHERE DATE(t.date_created) = CURDATE() 
 		          AND t.status = 'Pending' 
-		          AND c.counter_name = :cashierNumber
+		          AND t.counter_name = :cashierNumber
 		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
 		                 DATE(date_created) ASC, t.transaction_id ASC
 		        LIMIT 1 OFFSET 1
@@ -62,10 +62,10 @@
 		    $mydb->setQuery("
 		        SELECT t.queue_number 
 		        FROM ".self::$tbl_name." t
-		        JOIN counters c ON c.counter_id = t.counter_id 
+		        -- JOIN counters c ON c.counter_id = t.counter_id 
 		        WHERE DATE(t.date_created) = CURDATE() 
 		          AND t.status = 'Pending' 
-		          AND c.counter_name = :cashierNumber
+		          AND t.counter_name = :cashierNumber
 		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
 		                 DATE(date_created) ASC, t.transaction_id ASC
 		        LIMIT 1 OFFSET 2
@@ -80,12 +80,12 @@
 		    
 		    // Corrected query
 		    $mydb->setQuery("
-		        SELECT t.queue_number, t.transaction_id
+		        SELECT t.queue_number, t.transaction_id, t.counter_name
 		        FROM " . self::$tbl_name . " t
-		        JOIN counters c ON c.counter_id = t.counter_id 
+		        -- JOIN counters c ON c.counter_id = t.counter_id 
 		        WHERE DATE(t.date_created) = CURDATE() 
 		          AND t.status = 'Now Serving' 
-		          AND c.counter_name = :cashierNumber
+		          AND t.counter_name = :cashierNumber
 		        ORDER BY FIELD(t.priority, 'Yes', 'No') ASC, 
 		                 DATE(date_created) ASC, t.transaction_id ASC
 		        LIMIT 1
@@ -94,6 +94,8 @@
 		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
 		    return $cur;
 		}
+
+
 
 		// LIVE MONITOR DISPLAY
 		function monitor_get_nextQueueNumber(){
@@ -143,12 +145,12 @@
 		    
 		    // Corrected query
 		    $mydb->setQuery("
-		        SELECT t.queue_number, t.transaction_id, c.counter_name
+		        SELECT t.queue_number, t.transaction_id, t.counter_name
 		        FROM " . self::$tbl_name . " t
-		        JOIN counters c ON c.counter_id = t.counter_id 
+		        JOIN cashier_history ch ON ch.transaction_id = t.transaction_id 
 		        WHERE DATE(t.date_created) = CURDATE() 
-		          AND t.status = 'Now Serving' 
-		        ORDER BY DATE(date_created) DESC, t.transaction_id DESC
+		          AND ch.status = 'Now Serving' 
+		        ORDER BY DATE(date_created) DESC, ch.history_id DESC
 		        LIMIT 1
 		    ");
 		    // ", [':cashierNumber' => $cashierNumber]);
@@ -157,45 +159,23 @@
 		    return $cur;
 		}
 
-		function single_employees($id=0){
+
+
+		function single_transaction($id=0){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where emp_id = :id LIMIT 1", [':id' => $id]);
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where transaction_id = :id LIMIT 1", [':id' => $id]);
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 		}
 
-		function find_all_customers($name=""){
+		function find_all_transactions($name=""){
 			global $mydb;
 			$mydb->setQuery("SELECT * 
 				FROM  ".self::$tbl_name." 
-				WHERE  `INST_FULLNAME` ='{$name}'");
+				WHERE  `counter_name` ='{$name}'");
 			$row_count = $mydb->num_rows();
 			return $row_count;
 		}
-
-		static function AuthenticateEmployee($username = "", $password = "") {
-			global $mydb;
-			$sql = "SELECT * FROM employees WHERE `username` = :username LIMIT 1";
-			$params = [
-				':username' => $username
-			];
-			$mydb->setQuery($sql, $params);
-			$row_count = $mydb->num_rows();
-
-			if ($row_count == 1) {
-				$found_user = $mydb->loadSingleResult();
-
-				if (password_verify($password, $found_user->password)) {
-					$_SESSION['ACCOUNT_ID'] 	 	= $found_user->emp_id;
-					$_SESSION['ACCOUNT_NAME'] 		= $found_user->last_name. ', ' . $found_user->first_name;
-					$_SESSION['ACCOUNT_USERNAME']	= $found_user->role;
-					$_SESSION['EMPID'] 				= $found_user->role;
-					return true;
-				}
-			}
-
-			return false;
-		} 
 
 	
 		/*---Instantiation of Object dynamically---*/
@@ -259,35 +239,6 @@
 
 		    try {
 		        $attributes = $this->sanitized_attributes();
-
-		        $uniqid = uniqid();
-
-		        // Directory to save the QR code image (make sure this directory exists and is writable)
-		        $qrCodePath = __DIR__ . '/../phpqrcode/qrlib.php';
-				// if (!file_exists($qrCodePath)) {
-				//     message("The QR code generator file is missing.", "error");
-				//     redirect(WEB_ROOT . 'employees/');
-				//     return;
-				// }
-
-				require_once $qrCodePath;  // require the path of the phpqrcode qrlib.php
-
-				$upload_dir = __DIR__ . '/../img/QRCodes/'; // path to save qrcode
-
-				// if (!file_exists($upload_dir)) {
-				//     message("The QR codes folder is missing.", "error");
-				//     redirect(WEB_ROOT . 'employees/');
-				//     return;
-				// }
-
-				$uniqid = uniqid();
-				$qr_filename = $uniqid . $this->username . '.png';
-				$qr_full_path = $upload_dir . $qr_filename;
-
-				QRcode::png($qr_filename, $qr_full_path, QR_ECLEVEL_L, 4); // generate a qrcode and save in to file path
-
-		        // Add the qr_code filename attribute into database
-		        $attributes['qr_code'] = $qr_filename; 
 
 		        // Build the SQL with placeholders
 		        $placeholders = array_map(function($key) {

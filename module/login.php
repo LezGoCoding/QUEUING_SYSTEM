@@ -37,18 +37,20 @@
 		      message("Invalid Username and Password!", "error");
 		      redirect("login.php");
 		   } else {
-		      $employee = new Employees();
+
+		      // $employee = new Employees();
 
 		      // Authenticate the user
-		      $res = $employee::AuthenticateEmployee($email, $h_upass);
+		      // $res = $employee::AuthenticateEmployee($email, $h_upass);
+		      $res = true;
 
 		      if ($res == true) {
 		            // Session variables
 		            $_SESSION['last_activity'] = time();
-					$_SESSION['ACCOUNT_ID']       = $_SESSION['ACCOUNT_ID'];
-					$_SESSION['ACCOUNT_NAME']     = $_SESSION['ACCOUNT_NAME'] ;
-					$_SESSION['ACCOUNT_USERNAME'] = $_SESSION['ACCOUNT_USERNAME'];
-					$_SESSION['EMPID']     = $_SESSION['EMPID'];
+					$_SESSION['ACCOUNT_ID']       = 1;
+					$_SESSION['ACCOUNT_NAME']     = $email;
+					$_SESSION['ACCOUNT_USERNAME'] = 'WINDOW '.$upass;
+					$_SESSION['EMPID']     = "Cashier";
 					$_SESSION['ip']          =    $_SERVER['REMOTE_ADDR'];
 					$_SESSION['userAgent']   = $_SERVER['HTTP_USER_AGENT'];
 
@@ -60,38 +62,16 @@
 		            DoRecordLogs('Login to the system.', 'LOGIN');
 		            $success_message = "Login Successfull!";
 
-		            $username = $_SESSION['ACCOUNT_USERNAME'];
-		            $routes = '';
-		            // Role-based redirection
-			        switch ($username) {
-			            case 'admin':
-			                $routes = 'kiosk1';
-			                break;
-			            case 'kiosk1':
-			                $routes = 'kiosk1';
-			                break;
-			            case 'cashier1':
-			                $routes = 'cashier1';
-			                break;
-			            case 'cashier2':
-			                $routes = 'cashier2';
-			                break;
-			            case 'cashier3':
-			                $routes = 'cashier3';
-			                break;
-			            default:
-			                $routes = 'index.php';
-			                break;
-			        }
-
-		            redirect(WEB_ROOT. $routes); 
+		            redirect(WEB_ROOT. 'cashier'); 
 		            // redirect(WEB_ROOT. 'index.php'); 
+
 
 		      } else {
 
 		         if (!isset($_SESSION['accesscount'])) {
 		            $_SESSION['accesscount'] = 0;
 		         }
+
 		         $_SESSION['accesscount']++;
 		           $ipAddress = $_SERVER['REMOTE_ADDR'];
 		          $query = "SELECT * FROM loginattemp WHERE IPADDRESS = :ipaddress";
@@ -324,9 +304,9 @@
 										</div>
 
 										<div class="col-12">
-											<label for="yourPassword" class="form-label">Password</label>
-											<input type="password" class="form-control" name="userpass" placeholder="" />
-											<div class="invalid-feedback">Please enter your password!</div>
+											<label for="yourPassword" class="form-label">Window #</label>
+											<input type="number" class="form-control" name="userpass" id="windowNumber" placeholder="" min="1" step="1" required />
+											<div class="invalid-feedback">Please enter your window #</div>
 										</div>
 
 										<div class="form-group" style="text-align: center;">
@@ -405,3 +385,13 @@
 <!-- Template Main JS File -->
 <script src="<?php echo WEB_ROOT; ?>assets/js/main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script type="text/javascript">
+	document.getElementById('windowNumber').addEventListener('keydown', function(event) {
+    // Prevent typing "." or ","
+    if (event.key === '.' || event.key === ',' || event.key === 'e' || event.key === '-' ) {
+        event.preventDefault();
+    }
+});
+
+</script>

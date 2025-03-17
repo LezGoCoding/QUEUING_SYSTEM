@@ -253,6 +253,7 @@
 /*    color: #fff !important;*/
 }
 
+
 .next-customer-card{
     height: 6.5rem;
     border: 2px solid #003f87 !important;
@@ -341,6 +342,7 @@
         <?php require_once $content; ?>
     <!-- Main container end -->
     </main><!-- End #main -->
+
 
     <!-- Required jQuery first, then Bootstrap Bundle JS -->
 <script src="<?php echo WEB_ROOT ?>js/jquery.min.js"></script>

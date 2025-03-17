@@ -7,87 +7,75 @@
 	*/
 	require_once(LIB_PATH.DS.'database.php');
 
-	class Cashier_History{
+	class Kiosk{
 		
-		protected static $tbl_name = "cashier_history";
+		protected static $tbl_name = "transactions";
 		function db_fields(){
 			global $mydb;
 			return $mydb->getFieldsOnOneTable(self::$tbl_name);
 		}
 
 		function list_of_cashier(){
-		    global $mydb;
-		    // SQL to count pending and completed transactions for each cashier
-		    $mydb->setQuery("
-		        SELECT 
-		            c.counter_name, 
-		            c.counter_id,
-		            COUNT(CASE WHEN t.status = 'Pending' THEN 1 END) AS pending_count,
-		            COUNT(CASE WHEN t.status = 'Completed' THEN 1 END) AS completed_count
-		        FROM " . self::$tbl_name . " c
-		        LEFT JOIN transactions t ON c.counter_id = t.counter_id AND DATE(t.date_created) = CURDATE()
-		        GROUP BY c.counter_name
-		    ");
-		    $cur = $mydb->loadResultList();  // Get the list of cashiers with their pending and completed counts
-		    return $cur;
-		}
-
-
-		function get_currentLastCompletedQueueNumber($cashierNumber){
-		    global $mydb;
-		    
-		    // Corrected query
-		    $mydb->setQuery("
-		        SELECT t.queue_number 
-		        FROM " . self::$tbl_name . " ch
-		        JOIN transactions t ON ch.transaction_id = t.transaction_id 
-		        JOIN counters c ON c.counter_id = t.counter_id 
-		        WHERE DATE(ch.action_date) = CURDATE() 
-		          AND t.status = 'Completed' 
-		          AND c.counter_name = :cashierNumber
-		         ORDER BY DATE(ch.action_date) ASC, ch.history_id DESC
-		        LIMIT 1", [':cashierNumber' => $cashierNumber]);
-		    
-		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
-		    return $cur;
-		}
-
-		function monitor_get_currentLastCompletedQueueNumber(){
-		    global $mydb;
-		    
-		    // Corrected query
-		    $mydb->setQuery("
-		        SELECT t.queue_number 
-		        FROM " . self::$tbl_name . " ch
-		        JOIN transactions t ON ch.transaction_id = t.transaction_id 
-		        -- JOIN counters c ON c.counter_id = t.counter_id 
-		        WHERE DATE(ch.action_date) = CURDATE() 
-		          AND t.status = 'Completed' 
-		          -- AND c.counter_name = :cashierNumber
-		         ORDER BY DATE(ch.action_date) ASC, ch.history_id DESC
-		        LIMIT 1");
-		        // ", [':cashierNumber' => $cashierNumber]);
-		    
-		    $cur = $mydb->loadSingleResult();  // This will return the second row's queue number
-		    return $cur;
-		}
-
-		function single_cashier_history($id=0){
 			global $mydb;
-			$mydb->setQuery("SELECT * FROM ".self::$tbl_name." Where emp_id = :id LIMIT 1", [':id' => $id]);
+			$mydb->setQuery("SELECT * FROM ".self::$tbl_name);
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
+
+		function list_of_kioskTransactions(){
+			global $mydb;
+			$mydb->setQuery("SELECT t.queue_number, t.priority, DATE_FORMAT(t.date_created, '%h:%i %p') AS time_created
+							FROM ".self::$tbl_name." t
+							-- JOIN counters c on c.counter_id = t.counter_id 
+							WHERE DATE(date_created) = CURDATE() AND t.status = 'Pending'
+							ORDER BY FIELD(t.priority, 'Yes', 'No') ASC,
+				            DATE(t.date_created) ASC, t.transaction_id ASC LIMIT 18446744073709551615 OFFSET 1");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
+
+		function getNext_KioskTransactions(){
+			global $mydb;
+			$mydb->setQuery("SELECT t.queue_number, t.priority
+							FROM ".self::$tbl_name." t
+							WHERE DATE(date_created) = CURDATE() AND t.status = 'Pending'
+							ORDER BY FIELD(t.priority, 'Yes', 'No') ASC,
+				            DATE(date_created) ASC, t.transaction_id ASC LIMIT 1");
 			$cur = $mydb->loadSingleResult();
 			return $cur;
 		}
 
-		function find_all_cashier_history($name=""){
+		function getCountCashierPendingTransaction($counter_id){
 			global $mydb;
-			$mydb->setQuery("SELECT * 
-				FROM  ".self::$tbl_name." 
-				WHERE  `INST_FULLNAME` ='{$name}'");
+			$mydb->setQuery("SELECT t.queue_number, t.transaction_id
+							FROM ".self::$tbl_name." t
+							WHERE t.counter_id = {$counter_id} AND
+								DATE(t.date_created) = CURDATE() AND t.status = 'Pending'
+							ORDER BY FIELD(t.priority, 'Yes', 'No') ASC,
+				            DATE(t.date_created) ASC, t.transaction_id ASC");
 			$row_count = $mydb->num_rows();
 			return $row_count;
 		}
 
+		function getNoCashierPendingTransaction(){
+			global $mydb;
+			$mydb->setQuery("SELECT t.transaction_id, t.queue_number
+							FROM ".self::$tbl_name." t
+							WHERE t.counter_name = '' AND
+								DATE(date_created) = CURDATE() AND t.status = 'Pending'
+							ORDER BY FIELD(t.priority, 'Yes', 'No') ASC,
+				            DATE(date_created) ASC, t.transaction_id ASC
+				            LIMIT 1");
+			$cur = $mydb->loadResultList();
+			return $cur;
+		}
+
+		function current_queueNumber(){
+			global $mydb;
+			$mydb->setQuery("SELECT queue_number FROM ".self::$tbl_name." Where DATE(date_created) = CURDATE() ORDER BY transaction_id DESC LIMIT 1");
+			$cur = $mydb->loadSingleResult();
+			return $cur;
+		}
 
 
 
@@ -155,7 +143,7 @@
 		        $attributes = $this->sanitized_attributes();
 
 		        // Add date created todays date and time 
-		        $attributes['action_date'] = date('Y-m-d H:i:s');
+		        $attributes['date_created'] = date('Y-m-d H:i:s');
 
 		        // Build the SQL with placeholders
 		        $placeholders = array_map(function($key) {
@@ -184,6 +172,8 @@
 		        return false;
 		    }
 		}
+
+		
 
 		
 

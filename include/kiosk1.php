@@ -59,9 +59,9 @@
 
 		function getNoCashierPendingTransaction(){
 			global $mydb;
-			$mydb->setQuery("SELECT t.transaction_id
+			$mydb->setQuery("SELECT t.transaction_id, t.queue_number
 							FROM ".self::$tbl_name." t
-							WHERE t.counter_id = 0 AND
+							WHERE t.counter_name = '' AND
 								DATE(date_created) = CURDATE() AND t.status = 'Pending'
 							ORDER BY FIELD(T.priority, 'Yes', 'No') ASC,
 				            DATE(date_created) ASC, t.transaction_id ASC

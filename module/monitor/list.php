@@ -1,7 +1,9 @@
 <?php
+  $kiosk = new Kiosk();
   $cashierHistory = new Cashier_History();
   $transactions = new Transactions();
   $currentCustomer = $transactions->monitor_get_currentQueueNumber();
+  $nextCustomer = $kiosk->getNext_KioskTransactions();
 
   if (empty($currentCustomer->queue_number)) {
       $buttonStatus = 'disabled';  // If there is no next customer, disable the button
@@ -81,9 +83,39 @@
               <div class="activity " style="height: 45.5rem;">
                 <div class="row">
 
+                  <!-- First Card Sample -->
+                    <div class="col-lg-12 ">
+                      <div class="card shadow-sm">
+                        <div class="card-body p-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            
+                            <!-- Left Content -->
+                            <div>
+                              <h5 class="card-title mb-1 text-navy-blue">NEXT Number:</h5>
+                              <!-- <h6 class="text-muted small mb-0">Time Created: 01:13 PM</h6> -->
+                            </div>
+                            
+                            <!-- Right Content -->
+                            <div class="text-center">
+                              <!-- Right Content -->
+                              <h1 class="mb-0 text-orange"><b><?= htmlspecialchars($nextCustomer->queue_number); ?></b></h1>
+
+                               <!-- Priority Icon -->
+                              <?php if ($nextCustomer->priority === "Yes"): // Assuming 1 means Priority ?>
+                                <span class="badge bg-danger mt-1"><i class="fas fa-fire"></i> Priority</span>
+                              <?php else: ?>
+                                <span class="badge bg-secondary mt-1"><i class="fas fa-check-circle"></i> Normal</span>
+                              <?php endif; ?>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                   <?php
-                    $kiosk1 = new Kiosk1(); // Assuming your class name is Transactions
-                    $rows = $kiosk1->list_of_kioskTransactions();
+                    $kiosk = new Kiosk(); // Assuming your class name is Transactions
+                    $rows = $kiosk->list_of_kioskTransactions();
                     // $rows = $kiosk1->list_of_monitorkioskTransactions();
                   ?>
 
@@ -97,11 +129,20 @@
                             <!-- Left Content -->
                             <div>
                               <h5 class="card-title mb-1 text-navy-blue">Queue Number:</h5>
-                              <h6 class="text-muted small mb-0">Time Created: 01:13 PM</h6>
+                              <h6 class="text-muted small mb-0">Time Created: <?= htmlspecialchars($res->time_created); ?></h6>
                             </div>
                             
                             <!-- Right Content -->
-                            <h4 class="mb-0 text-orange"><b><?= htmlspecialchars($res->queue_number); ?></b></h4>
+                            <div class="text-center">
+                                <h4 class="mb-0 text-orange"><b><?= htmlspecialchars($res->queue_number); ?></b></h4>
+                                
+                              <!-- Priority Icon -->
+                              <?php if ($res->priority === "Yes"): // Assuming 1 means Priority ?>
+                                <span class="badge bg-danger mt-1"><i class="fas fa-fire"></i> Priority</span>
+                              <?php else: ?>
+                                <span class="badge bg-secondary mt-1"><i class="fas fa-check-circle"></i> Normal</span>
+                              <?php endif; ?>
+                            </div>
 
                           </div>
                         </div>
