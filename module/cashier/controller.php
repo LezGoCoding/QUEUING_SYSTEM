@@ -41,11 +41,10 @@
                 throw new Exception("Failed to create cashier history.");
             }
 
-
             $mydb->commitTransaction(); // Commit the transaction
 
             DoRecordLogs("Transaction with ID $transactionId has been updated successfully!", "UPDATE");
-            // message("Transaction has been updated successfully!", "success");
+            message("Transaction has been completed successfully!", "success");
 
             doGetAnotherTransaction(); // get another customer to the transaction with pending status and no assign window yet.
 
@@ -87,9 +86,9 @@
             $mydb->commitTransaction(); // Commit the transaction
 
             DoRecordLogs("Transaction with ID $transactionId has been updated successfully!", "UPDATE");
-            // message("Transaction has been updated successfully!", "success");
+            message("Transaction has been cancelled!", "success");
 
-            doGetAnotherTransaction(); // get another customer to the transaction with pending status and no assign window yet.
+            doGetAnotherTransaction(); 
 
         } catch (Exception $e) {
             $mydb->rollbackTransaction(); // Rollback transaction on failure

@@ -8,6 +8,8 @@
   $nextCustomer = $kiosk->getNext_KioskTransactions();
 ?>
 
+<?php check_message(); ?>
+
 <div class="row">
 
   <div class="card col-lg-9">

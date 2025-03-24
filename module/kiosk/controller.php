@@ -34,7 +34,7 @@
 
             $mydb->commitTransaction();
 
-            // message("New Transaction has been created successfully!", "success");
+            message("New Transaction has been created successfully!", "success");
             DoRecordLogs("New Transaction has been created successfully!", "INSERT");
 
         } catch (Exception $e) {

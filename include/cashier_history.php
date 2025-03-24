@@ -15,23 +15,6 @@
 			return $mydb->getFieldsOnOneTable(self::$tbl_name);
 		}
 
-		function list_of_cashier(){
-		    global $mydb;
-		    // SQL to count pending and completed transactions for each cashier
-		    $mydb->setQuery("
-		        SELECT 
-		            c.counter_name, 
-		            c.counter_id,
-		            COUNT(CASE WHEN t.status = 'Pending' THEN 1 END) AS pending_count,
-		            COUNT(CASE WHEN t.status = 'Completed' THEN 1 END) AS completed_count
-		        FROM " . self::$tbl_name . " c
-		        LEFT JOIN transactions t ON c.counter_id = t.counter_id AND DATE(t.date_created) = CURDATE()
-		        GROUP BY c.counter_name
-		    ");
-		    $cur = $mydb->loadResultList();  // Get the list of cashiers with their pending and completed counts
-		    return $cur;
-		}
-
 
 		function get_currentLastCompletedQueueNumber($cashierNumber){
 		    global $mydb;
@@ -91,7 +74,6 @@
 
 
 
-	
 		/*---Instantiation of Object dynamically---*/
 		static function instantiate($record) {
 			$object = new self;

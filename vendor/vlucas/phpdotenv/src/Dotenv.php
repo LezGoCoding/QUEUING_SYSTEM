@@ -145,7 +145,7 @@ class Dotenv
      *
      * @return \Dotenv\Dotenv
      */
-    public static function createImmutable($paths, $names = null, bool $shortCircuit = true, ?string $fileEncoding = null)
+    public static function  createImmutable($paths, $names = null, bool $shortCircuit = true, ?string $fileEncoding = null)
     {
         $repository = RepositoryBuilder::createWithDefaultAdapters()->immutable()->make();
 

@@ -21,6 +21,8 @@
 
 ?>
 
+<?php check_message(); ?>
+
 <div class="row">
   <div class="card col-lg-7 col-md-12 col-sm-12">
 
@@ -42,7 +44,7 @@
                 <div disabled class="monitor_custom_card" >
                   <div class="d-flex align-items-center justify-content-center">
                   </div>
-                  <h1 class="responsive-heading" style="font-size: 8.5rem;"><?=$currentCustomer->queue_number?></h1>
+                  <h1 class="current-number"><?=$currentCustomer->queue_number?></h1>
                  
                 </div>
               </div>
@@ -239,7 +241,6 @@
       </div>
     </section>
   </div>
-
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -398,7 +399,6 @@
     // Update time every second
     setInterval(updateTime, 1000);
     updateTime();
-
 </script>
 
 <script>
@@ -407,5 +407,6 @@
     location.reload(); // Reload the page
   }, 5000); // Reload every 10 seconds
 </script>
+
 
 
